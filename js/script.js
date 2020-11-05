@@ -1,4 +1,4 @@
-function playGame (argPlayerInput) {
+function playGame (playerInput) {
     clearMessages();
     function getMoveName(argMoveId){
       if(argMoveId == 1){
@@ -15,40 +15,57 @@ function playGame (argPlayerInput) {
 
     function displayResult(argComputerMove, argPlayerMove) {
       if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
-       printMessage('Ty wygrywasz!');
-  } else if ( argComputerMove == 'papier' && argPlayerMove == 'kamień') {
+       printMessage('Wygrywasz!');
+    } else if ( argComputerMove == 'papier' && argPlayerMove == 'kamień') {
        printMessage('Przegrywasz!');
-  } else if ( argComputerMove == 'kamień' && argPlayerMove == 'kamień') {
+    } else if ( argComputerMove == 'kamień' && argPlayerMove == 'kamień') {
        printMessage('Remis! Spróbuj jeszcze raz!');
-  } else if ( argComputerMove == 'kamień' && argPlayerMove == 'nieznany ruch') {
+    } else if ( argComputerMove == 'kamień' && argPlayerMove == 'nieznany ruch') {
        printMessage('Czyżby walkower? Wybierz którąś wartość, aby zagrać!');
-  } else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
-       printMessage('Ty wygrywasz!');
-  } else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
+    } else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+       printMessage('Wygrywasz!');
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
        printMessage('Przegrywasz!');
-  } else if ( argComputerMove == 'papier' && argPlayerMove == 'papier') {
+    } else if ( argComputerMove == 'papier' && argPlayerMove == 'papier') {
        printMessage('Remis! Spróbuj jeszcze raz!');
-  } else if ( argComputerMove == 'papier' && argPlayerMove == 'nieznany ruch') {
+    } else if ( argComputerMove == 'papier' && argPlayerMove == 'nieznany ruch') {
        printMessage('Czyżby walkower? Wybierz którąś wartość, aby zagrać!');
-  } else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
-       printMessage('Ty wygrywasz!');
-  } else if ( argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
+    } else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+       printMessage('Wygrywasz!');
+    } else if ( argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
        printMessage('Przegrywasz!');
-  } else if ( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce') {
+    } else if ( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce') {
        printMessage('Remis! Spróbuj jeszcze raz!');
-  } else if ( argComputerMove == 'nożyce' && argPlayerMove == 'nieznany ruch') {
+    } else if ( argComputerMove == 'nożyce' && argPlayerMove == 'nieznany ruch') {
        printMessage('Czyżby walkower? Wybierz którąś wartość, aby zagrać!');
+    }
   }
-  }
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  
+  let computerMove = getMoveName(randomNumber);
+  
+  printMessage('Mój ruch to: ' + computerMove);
+  
+  let playerMove = getMoveName(playerInput);
+  
+  printMessage('Twój ruch to: ' + playerMove);
 
-    console.log('Wylosowana liczba to: ' + randomNumber);
+  let argComputerMove = getMoveName(randomNumber);
 
-    let computerMove = getMoveName(randomNumber);
+  let argPlayerMove = getMoveName(playerInput);
 
-    printMessage('Mój ruch to: ' + computerMove);
-
-
-    displayResult(argComputerMove, argPlayerMove);
+  displayResult(argComputerMove, argPlayerMove);
 }
+
+document.getElementById('play-rock').addEventListener('click', function(){
+    playGame(1);
+  });
+
+document.getElementById('play-paper').addEventListener('click', function(){
+    playGame(2);
+  });
+
+document.getElementById('play-scissors').addEventListener('click', function(){
+    playGame(3);
+  });
