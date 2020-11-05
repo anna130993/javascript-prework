@@ -20,24 +20,18 @@ function playGame (playerInput) {
        printMessage('Przegrywasz!');
     } else if ( argComputerMove == 'kamień' && argPlayerMove == 'kamień') {
        printMessage('Remis! Spróbuj jeszcze raz!');
-    } else if ( argComputerMove == 'kamień' && argPlayerMove == 'nieznany ruch') {
-       printMessage('Czyżby walkower? Wybierz którąś wartość, aby zagrać!');
     } else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
        printMessage('Wygrywasz!');
     } else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
        printMessage('Przegrywasz!');
     } else if ( argComputerMove == 'papier' && argPlayerMove == 'papier') {
        printMessage('Remis! Spróbuj jeszcze raz!');
-    } else if ( argComputerMove == 'papier' && argPlayerMove == 'nieznany ruch') {
-       printMessage('Czyżby walkower? Wybierz którąś wartość, aby zagrać!');
     } else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
        printMessage('Wygrywasz!');
     } else if ( argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
        printMessage('Przegrywasz!');
     } else if ( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce') {
        printMessage('Remis! Spróbuj jeszcze raz!');
-    } else if ( argComputerMove == 'nożyce' && argPlayerMove == 'nieznany ruch') {
-       printMessage('Czyżby walkower? Wybierz którąś wartość, aby zagrać!');
     }
   }
 
