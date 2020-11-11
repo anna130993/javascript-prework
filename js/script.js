@@ -1,13 +1,13 @@
 {
 
-function playGame (playerInput) {
-    function getMoveName(argMoveId){
+const playGame = function(playerInput) {
+    const getMoveName = function(argMoveId){
       if(argMoveId == 1) return 'kamień';
       else if(argMoveId == 2) return 'papier';
       else if(argMoveId == 3) return 'nożyce';
     }
 
-    function displayResult(argComputerMove, argPlayerMove) {
+    const displayResult = function(argComputerMove, argPlayerMove) {
 
       const cond = (
          (argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
