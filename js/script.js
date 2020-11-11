@@ -1,3 +1,5 @@
+{
+
 function playGame (playerInput) {
     function getMoveName(argMoveId){
       if(argMoveId == 1) return 'kamień';
@@ -38,3 +40,5 @@ document.getElementById('buttons').addEventListener('click', function(event){
        playGame(event.target.dataset.choice);
     }
   });
+
+}
