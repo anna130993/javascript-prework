@@ -1,13 +1,13 @@
 {
 
 const playGame = function(playerInput) {
-    const getMoveName = function(argMoveId){
+   const getMoveName = function(argMoveId) {
       if(argMoveId == 1) return 'kamień';
       else if(argMoveId == 2) return 'papier';
       else if(argMoveId == 3) return 'nożyce';
-    }
+   }
 
-    const displayResult = function(argComputerMove, argPlayerMove) {
+   const displayResult = function(argComputerMove, argPlayerMove) {
 
       const cond = (
          (argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
@@ -18,9 +18,9 @@ const playGame = function(playerInput) {
       if (cond) printMessage ('Wygrywasz!');
       else if (argComputerMove == argPlayerMove) printMessage ('Remis! Spróbuj jeszcze raz!');
       else printMessage ('Przegrywasz!');
-      }
+   }
 
-    clearMessages();
+  clearMessages();
 
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   
